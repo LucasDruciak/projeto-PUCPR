@@ -1,5 +1,21 @@
 lista_estudantes = []
 
+def apresentar_menu_principal():
+    print("MENU PRINCIPAL")
+    print("(1) GERENCIAR ESTUDANTES")
+    print("(2) GERENCIAR PROFESSORES")
+    print("(3) GERENCIAR TURMAS")
+    print("(4) GERENCIAR MATRICULAS")
+    print("(0) SAIR")
+
+def apresentar_menu_operacoes():
+    print("----[ESTUDANTES] MENU DE OPERAÇÕES----")
+    print("1. Incluir")
+    print("2. Listar")
+    print("3. Atualizar")
+    print("4. Excluir")
+    print("0. Voltar")
+
 def incluir_estudante():
     print("---- INCLUSÃO DE ESTUDANTE ----")
     
@@ -7,12 +23,7 @@ def incluir_estudante():
     nome = input("Digite o nome do estudante: ")
     cpf = input("Digite o CPF do estudante: ")
     
-    # Adiciona o estudante à lista
-    lista_estudantes.append({
-        "codigo": codigo,
-        "nome": nome,
-        "cpf": cpf
-    })
+    lista_estudantes.append({"codigo": codigo, "nome": nome, "cpf": cpf})
     print(f"Estudante {nome} incluído com sucesso.")
 
 def listar_estudantes():
@@ -55,13 +66,7 @@ def excluir_estudante():
 
 def gerenciar_estudantes():
     while True:
-        print("----[ESTUDANTES] MENU DE OPERAÇÕES----")
-        print("1. Incluir")
-        print("2. Listar")
-        print("3. Atualizar")
-        print("4. Excluir")
-        print("0. Voltar")
-        
+        apresentar_menu_operacoes()
         acao = input('Informe a ação desejada: ')
         
         if acao.isdigit():
@@ -83,14 +88,7 @@ def gerenciar_estudantes():
 
 def menu_principal():
     while True:
-        # Menu Principal
-        print("MENU PRINCIPAL")
-        print("(1) GERENCIAR ESTUDANTES")
-        print("(2) GERENCIAR PROFESSORES")
-        print("(3) GERENCIAR TURMAS")
-        print("(4) GERENCIAR MATRICULAS")
-        print("(0) SAIR")
-        
+        apresentar_menu_principal()
         opcao = input("Digite uma opção: ")
         
         if opcao.isdigit():
